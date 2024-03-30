@@ -1,4 +1,5 @@
 import 'package:chats/common/routes/pages.dart';
+import 'package:chats/common/style/theme.dart';
 import 'package:chats/global.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,10 +21,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) => GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
+        theme: AppTheme.light,
         initialRoute: AppPages.INITIAL,
         getPages: AppPages.routes,
       ),

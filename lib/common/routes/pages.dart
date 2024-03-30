@@ -1,4 +1,5 @@
 import 'package:chats/pages/message/index.dart';
+import 'package:chats/pages/profile/index.dart';
 import 'package:flutter/material.dart';
 import 'package:chats/common/middlewares/middlewares.dart';
 
@@ -53,8 +54,11 @@ class AppPages {
         RouteAuthMiddleware(priority: 1),
       ],
     ),
-    // //我的
-    // GetPage(name: AppRoutes.Profile, page: () => ProfilePage(), binding: ProfileBinding()),
+
+    // profile section
+    GetPage(name: AppRoutes.Profile, page: () => const ProfilePage(), binding: ProfileBinding()),
+
+
     // //聊天详情
     // GetPage(name: AppRoutes.Chat, page: () => ChatPage(), binding: ChatBinding()),
     //

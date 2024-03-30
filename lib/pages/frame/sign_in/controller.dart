@@ -1,4 +1,5 @@
 import 'package:chats/common/entities/entities.dart';
+import 'package:chats/common/routes/routes.dart';
 import 'package:chats/pages/frame/sign_in/index.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
@@ -30,6 +31,7 @@ class SignInController extends GetxController {
           loginPanelListRequestEntity.email = email;
           loginPanelListRequestEntity.open_id = id;
           loginPanelListRequestEntity.type = 2;
+          asyncPostAllData();
         }
       } else {
         if (kDebugMode) {
@@ -41,5 +43,9 @@ class SignInController extends GetxController {
         print('...error with login $e');
       }
     }
+  }
+  asyncPostAllData(){
+    print("...lets go to message page");
+    Get.offAllNamed(AppRoutes.Message);
   }
 }
