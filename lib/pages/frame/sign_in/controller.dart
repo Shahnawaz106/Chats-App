@@ -1,5 +1,6 @@
 import 'package:chats/common/entities/entities.dart';
 import 'package:chats/common/routes/routes.dart';
+import 'package:chats/common/store/user.dart';
 import 'package:chats/pages/frame/sign_in/index.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
@@ -44,8 +45,12 @@ class SignInController extends GetxController {
       }
     }
   }
-  asyncPostAllData(){
-    print("...lets go to message page");
+  asyncPostAllData() async {
+    /*
+     first save in the database
+     second save in the local storage
+     */
+    UserStore.to.setIsLogin = true;
     Get.offAllNamed(AppRoutes.Message);
   }
 }
